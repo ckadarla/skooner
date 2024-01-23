@@ -1,5 +1,15 @@
-# skooner
-Skooner dashboard GUI for Kubernets
+# Skooner is the easiest way to manage your Kubernetes cluster
+
+- **Full cluster management**: Namespaces, Nodes, Pods, Replica Sets, Deployments, Storage, RBAC and more
+- **Blazing fast and Always Live**: no need to refresh pages to see the latest cluster status
+- **Quickly visualize cluster health at a glance**: Real time charts help quickly track down poorly performing resources
+- **Easy CRUD and scaling**: plus inline API docs to easily understand what each field does
+- **100% responsive** (runs on your phone/tablet)
+- **Simple OpenID integration**: no special proxies required
+- **Simple installation**: use the provided yaml resources to have skooner up and running in under 1 minute (no, seriously)
+- **See Skooner in action**:<br>
+
+- [Prerequisites](#prerequisites)
 
 ```bash
 kubectl apply -f skooner.yaml
@@ -10,14 +20,14 @@ This will create a Deployment/Service/Service Account for Skooner/Cluster Role B
 ### To access the skooner in you laptop for security you can use port forwarding
 
 ```bash 
- kubectl port-forward deployment/skooner --address 0.0.0.0 8080:4654 -n kube-system
+ kubectl port-forward deployment/skooner --address 0.0.0.0 8090:4654 -n kube-system
 
 ```
 
 Once we access ther skooner it will ask for authentication which we needed to generate using the bellow command 
 
 ```bash 
- kubectl create token skooner-sa 
+ kubectl create token skooner-sa -n kube-system
 ```
 ### Want to create readonly user please apply readonlyuser.yaml with the bellow command  and follow above commands 
 
@@ -37,7 +47,7 @@ kubectl create clusterrolebinding skooner-rou --clusterrole=aks-cluster-readonly
 ```
 ### Find the secret that was created to copy the token for the SA
 ```bash
-kubectl get secrets -n kube-system
+kubectl get secrets -n kube-system -n kube-system
 ```
 ### Show the contents of the secret to extract the token
 ```bash
