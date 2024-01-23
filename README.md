@@ -19,7 +19,9 @@
 kubectl apply -f skooner.yaml
 ```
 
-This will create a Deployment/Service/Service Account for Skooner/Cluster Role Binding for skooner-sa account as a super user
+This will also create a Deployment/Service/Service Account for Skooner/Cluster Role Binding for with "skooner-sa" account as a super user for Skooner with Cluster full permissions
+
+
 
 ### To access the skooner in you laptop without NodePort or Loadbalancer for security you can use port forwarding
 
@@ -33,6 +35,8 @@ Once we access ther skooner it will ask for authentication which we needed to ge
 ```bash 
  kubectl create token skooner-sa -n kube-system
 ```
+
+
 ### Want to create readonly user please apply readonlyuser.yaml with the bellow command  and follow above commands 
 
 ```bash
