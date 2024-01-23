@@ -1,4 +1,4 @@
-# skooner
+### skooner
 Skooner dashboard GUI for Kubernets
 
 ```bash
