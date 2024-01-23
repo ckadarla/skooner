@@ -9,10 +9,10 @@
 - **Simple installation**: use the provided yaml resources to have skooner up and running in under 1 minute (no, seriously)
 - **See Skooner in action**:<br>
 
-## Table of Contents
+<!-- ## Table of Contents
 
 - [Installation](#Installation)
-- [Read only user for developers](#getting-started)
+- [Read only user for developers]() -->
 
 
 ## Installation 
