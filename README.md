@@ -7,7 +7,7 @@
 - **100% responsive** (runs on your phone/tablet)
 - **Simple OpenID integration**: no special proxies required
 - **Simple installation**: use the provided yaml resources to have skooner up and running in under 1 minute (no, seriously)
-- **See Skooner in action**:<br>
+
 
 <!-- ## Table of Contents
 
