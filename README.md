@@ -19,11 +19,11 @@
 kubectl apply -f skooner.yaml
 ```
 
-This will also create a Deployment/Service/Service Account for Skooner/Cluster Role Binding for with "skooner-sa" account as a super user for Skooner with Cluster full permissions
-
+#### This will also create a Deployment/Service/Service Account for Skooner/Cluster Role Binding for with "skooner-sa" account as a super user for Skooner with Cluster full permissions
 
 
 ### To access the skooner in you laptop without NodePort or Loadbalancer for security you can use port forwarding
+
 
 ```bash 
  kubectl port-forward deployment/skooner --address 0.0.0.0 8090:4654 -n kube-system
