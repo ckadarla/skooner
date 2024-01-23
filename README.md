@@ -9,7 +9,11 @@
 - **Simple installation**: use the provided yaml resources to have skooner up and running in under 1 minute (no, seriously)
 - **See Skooner in action**:<br>
 
-- [Prerequisites](#prerequisites)
+## Table of Contents
+
+- [Installation](#Installation)
+
+## Installation 
 
 ```bash
 kubectl apply -f skooner.yaml
@@ -17,7 +21,7 @@ kubectl apply -f skooner.yaml
 
 This will create a Deployment/Service/Service Account for Skooner/Cluster Role Binding for skooner-sa account as a super user
 
-### To access the skooner in you laptop for security you can use port forwarding
+### To access the skooner in you laptop without NodePort or Loadbalancer for security you can use port forwarding
 
 ```bash 
  kubectl port-forward deployment/skooner --address 0.0.0.0 8090:4654 -n kube-system
