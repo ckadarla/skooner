@@ -1,0 +1,24 @@
+# Read only cluseter Role 
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: read-only-role
+rules:
+- apiGroups: [""]
+  resources: ["pods", "services", "configmaps", "secrets", "deployments", "replicasets", "statefulsets"]
+  verbs: ["get", "list", "watch"]
+
+#cluster role bing with the read only user
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: read-only-binding
+subjects:
+- kind: User
+  name: <AZURE_AD_USER> # Replace with the actual Azure AD user you want to grant read-only access
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: read-only-role
+  apiGroup: rbac.authorization.k8s.io
