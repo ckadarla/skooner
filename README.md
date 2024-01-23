@@ -14,11 +14,15 @@ This will create a Deployment/Service/Service Account for Skooner/Cluster Role B
 
 ```
 
-Once we access ther user it will ask for authentication which we needed to generate using the bellow command 
+Once we access ther skooner it will ask for authentication which we needed to generate using the bellow command 
 
 ```bash 
  kubectl create token skooner-sa 
+```
+## Want to create readonly user please apply readonlyuser.yaml with the bellow command  and follow above commands 
 
+```bash
+kubectl apply -f readonlyuser.yaml
 ```
 
 # Read only user for developers 
@@ -32,7 +36,7 @@ kubectl create serviceaccount skooner-rou -n kube-system
 kubectl create clusterrolebinding skooner-rou --clusterrole=aks-cluster-readonly-role --serviceaccount=kube-system:skooner-rou -n kube-system
 ```
 # For Kubernetes v1.21 or lower
-# Find the secret that was created to hold the token for the SA
+# Find the secret that was created to copy the token for the SA
 ```bash
 kubectl get secrets -n kube-system
 ```
@@ -45,6 +49,5 @@ kubectl describe secret skooner-rou-token-xxxxx
 kubectl create token skooner-rou -n kube-system
 ```
 
-## Want to create readonly user please apply readonlyuser.yaml with the bellow command  and follow above commands 
 
 
