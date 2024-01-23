@@ -37,7 +37,7 @@ Once we access ther skooner it will ask for authentication which we needed to ge
 ```
 
 
-### Want to create readonly user please apply readonlyuser.yaml with the bellow command  and follow above commands 
+### Want to create readonly user to provide with developer for logs please apply readonlyuser.yaml with the bellow command.
 
 ```bash
 kubectl apply -f readonlyuser.yaml
@@ -53,6 +53,11 @@ kubectl create serviceaccount skooner-rou -n kube-system
 ```bash
 kubectl create clusterrolebinding skooner-rou --clusterrole=aks-cluster-readonly-role --serviceaccount=kube-system:skooner-rou -n kube-system
 ```
+### To generate token for readonly-user
+```bash
+kubectl create token skooner-rou -n kube-system
+```
+
 ### Find the secret that was created to copy the token for the SA
 ```bash
 kubectl get secrets -n kube-system -n kube-system
@@ -61,7 +66,4 @@ kubectl get secrets -n kube-system -n kube-system
 ```bash
 kubectl describe secret skooner-rou-token-xxxxx
 ```
-### To generate token for readonly-user
-```bash
-kubectl create token skooner-rou -n kube-system
-```
+
