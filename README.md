@@ -12,7 +12,8 @@
 ## Table of Contents
 
 - [Installation](#Installation)
-- [Read only user for developers](# Read only user for developers )
+- [Read only user for developers](#getting-started)
+
 
 ## Installation 
 
